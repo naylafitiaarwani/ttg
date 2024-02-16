@@ -45,11 +45,11 @@
     <div class="container">
     <div class="rectangle-1">
         </div>
-        <p class="location ">Location</p>
-        <p class="unit-storages ">Unit Storages</p>
-        <p class="alert ">Alert</p>
-        <img class="alarm " src="./assets/alarm.png " />
-        <p class="setting ">Setting</p>
+        <p class="location "></p>
+        <p class="unit-storages "></p>
+        <p class="alert "></p>
+        <!-- <img class="alarm " src="./assets/alarm.png " /> -->
+        <p class="setting "></p>
         <div class="rectangle-5 ">
         </div>
         <img class="male-user " src="./assets/male-user.png " />
@@ -65,9 +65,9 @@
 
         <div class="rectangle-2">
         </div>
-        <div class="rectangle-6">
-        </div>
-        <p class="turn-on">Turn on</p>
+        <!-- <div class="rectangle-6">
+        </div> -->
+        <!-- <p class="turn-on">Turn on</p> -->
     </div>
 </div>
 <!-- end nav -->

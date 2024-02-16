@@ -4,17 +4,6 @@ $konek = mysqli_connect("localhost", "root", "", "ttg");
 //baca isi tempat sampah
 $sql = mysqli_query($konek, "SELECT * FROM tb_volume");
 $berat = mysqli_fetch_array($sql);
-
-
-//persentas tinggi sampah
-//$persentase_berat_sampah = ($berat['berat']/200); //hasil persen
-
-//$berat_max = 40; //berat dalam kg 
-// ukur tinggi sampah
-//$tinggi_sampah = $tinggi_max - $data['tinggi'];
-//persentas berat sampah
-// $persentase_berat_sampah = ($berat_sampah/$berat_max)*100; //hasil persen
-//hitung volume sampah
 ?>
 
 
@@ -23,23 +12,16 @@ $berat = mysqli_fetch_array($sql);
         <div class="gauge" style=" text-center">
             <div class="gauge__body">
             <?php
-if ($berat['berat'] == 40) {
-    echo '<div class="gauge__fill" style="transform: rotate(0.50turn);"></div>';
-    echo '<div class="gauge__cover">' . $berat['berat'] . '/40kg</div>';
-    echo '<p class="empatpuluh">/40kg</p>';
-} else if($berat['berat'] < 40) {
-    echo '<div class="gauge__fill" style="transform: rotate(0.25turn);"></div>';
-    echo '<div class="gauge__cover">' . $berat['berat'] . '/40kg</div>';
-    
-} else if($berat['berat'] < 20) {
-        echo '<div class="gauge__fill" style="transform: rotate(0.10turn);"></div>';
-        echo '<div class="gauge__cover">' . $berat['berat'] . '/40kg</div>';
-} else {
-    echo '<div class="gauge__fill" style="transform: rotate(0turn);"></div>';
-    echo '<div class="gauge__cover">' . $berat['berat'] . '/40kg</div>';
-    
+        $gauge=0;
+
+for($i=1; $i <= $berat['berat']; $i++){
+$gauge += 0.0125;
+
 }
-?>
+    ?>
+    <div class="gauge__fill" style="transform: rotate(<?php echo $gauge?>turn);"></div>;
+    <div class="gauge__cover"> <?php echo $berat['berat']?>/40kg</div>;
+
 
             </div>
         </div>
@@ -51,7 +33,6 @@ if ($berat['berat'] == 40) {
 
         <script type="text/javascript">
             const gaugeElement = document.querySelector(".gauge");
-
             function setGaugeValue(gauge, value){
                 if(value<0|| value>1){
                     return;
