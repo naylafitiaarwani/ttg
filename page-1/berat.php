@@ -2,7 +2,7 @@
 //koneksi ke database
 $konek = mysqli_connect("localhost", "root", "", "ttg");
 //baca isi tempat sampah
-$sql = mysqli_query($konek, "SELECT * FROM tb_volume");
+$sql = mysqli_query($konek, "SELECT berat FROM tb_volume where id='1'");
 $berat = mysqli_fetch_array($sql);
 ?>
 
